@@ -89,9 +89,9 @@ int read_execute(void)
 			execute_operation();
 			i = 0;
 		}
-		else if (current[0] == 32 && strlen(line[i]))
+		else if ((current[0] == 32) && strlen(line[i]))
 			i++;
-		else if (current[0] != ' ' && i < 2)
+		else if ((current[0] != ' ') && i < 2)
 		{
 			/* printf("%ld %d\n", strlen(line[i]), i); */
 			line[i][strlen(line[i])] = current[0];
