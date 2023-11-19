@@ -53,5 +53,6 @@ int line_number = 0;
 void empty_line(void);
 void execute_operation(void);
 int convert(void);
+int read_execute(void);
 
 #endif
