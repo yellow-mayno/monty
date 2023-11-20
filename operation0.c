@@ -1,11 +1,14 @@
 #include "monty.h"
 
 /**
-* push_stack - pushes int to the stack/queue 
+* push_stack - pushes int to the stack/queue
+* @stack: just to conforme to the instruction_t (will be NULL)
+* @line_number: just to conforme to the instruction_t (will be 0)
 * Return: 0 / 1
 */
 
-int push_stack(void)
+int push_stack(stack_t **stack __attribute__((unused)),
+					unsigned int line_number __attribute__((unused)))
 {
 	stack_t *new;
 	int operand;
@@ -27,20 +30,23 @@ int push_stack(void)
 	new->prev = NULL;
 	/* for stack */
 	new->next = staque;
-	if (staque = NULL)
+	if (staque == NULL)
 		staque = new;
 	else
 		staque->prev = new;
 	/* -- */
-	return (EXIT_SUCCES);
+	return (EXIT_SUCCESS);
 }
 
 /**
-* pall_stack - prints all the stack from top to bottom 
-* Return: void 
+* pall_stack - prints all the stack from top to bottom
+* @stack: just to conforme to the instruction_t (will be NULL)
+* @line_number: just to conforme to the instruction_t (will be 0)
+* Return: 1/0
 */
 
-void pall_stack(void)
+int pall_stack(stack_t **stack __attribute__((unused)),
+					unsigned int line_number __attribute__((unused)))
 {
 	stack_t *ptr = staque;
 
@@ -49,4 +55,5 @@ void pall_stack(void)
 		printf("%d\n", staque->n);
 		ptr = staque->next;
 	}
+	return (EXIT_SUCCESS);
 }

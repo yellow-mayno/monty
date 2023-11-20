@@ -1,4 +1,5 @@
 #include "monty.h"
+/*#include "monty2.h"*/
 
 /**
 * main - the main
@@ -21,31 +22,22 @@ int main(int argc __attribute__((unused)), char **argv)
 }
 
 /**
-* empty_line - enpties the line array for another line
+* execute_operation - as the name suggests xD
 * Return: void
 */
 
-void empty_line(void)
+int execute_operation(void)
 {
 	int i = 0;
 
+	printf(" /// %s | %d\n", line[0], convert());
 	for (; i < 1000; i++)
 	{
 		line[0][i] = '\0';
 		line[1][i] = '\0';
 	}
-}
-
-/**
-* execute_operation - as the name suggests xD
-* Return: void
-*/
-
-void execute_operation(void)
-{
-	printf(" /// %s | %d\n", line[0], convert());
-	empty_line();
 	line_number++;
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -86,7 +78,8 @@ int read_execute(void)
 			return (EXIT_FAILURE);
 		if (current[0] == 10)
 		{
-			execute_operation();
+			if (execute_operation())
+				return (EXIT_FAILURE);
 			i = 0;
 		}
 		else if ((current[0] == 32) && strlen(line[i]))

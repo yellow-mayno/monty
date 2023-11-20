@@ -9,7 +9,6 @@
 #include <limits.h> /* for INT_MIN */
 #include <stdlib.h> /* for EXIT_VALUE */
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,7 +36,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 		char *opcode;
-		void (*f)(stack_t **stack, unsigned int line_number);
+		int (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* Global variables */
@@ -50,9 +49,13 @@ int line_number = 0;
 
 
 /* prototypes */
-void empty_line(void);
-void execute_operation(void);
+int execute_operation(void);
 int convert(void);
 int read_execute(void);
+
+
+
+
+
 
 #endif

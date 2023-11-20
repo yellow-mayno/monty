@@ -11,3 +11,4 @@ The second step will be:
 implement push, pop and basic math operation
 The parsing has been done in the step before. Now, we have an operation and operand. We need a fonction to convert and test if the operand is and to numerical value, and also a function that link the operation to a function. for that we have instructions_t.
 We need to introduce the line_number for we will use it to print errors
+Errors commited here are mainly from linker and I didn't understood them `multiple definition of ...(.bss+0x7d0): first defined here`
